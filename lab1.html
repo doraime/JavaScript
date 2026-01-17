@@ -10,13 +10,55 @@
 	</style>
 </head>
 <body>
+	
+	<h1>IT-2320 - Lab 1: Language Constructs</h1>
+	<h2>Student Name: Sophia Choi</h2>
+	<p>
+	Output:
+	</p><div id="output">document.getElementById("output").innerText = "innerHTML value set";</div>
+	<p></p>
+	<p>
+	Values:<br>
+	</p><div id="values">const valuesDiv = document.getElementById("values");
+		let outputHTML = "";
+		for (let i = 1; i <= 10; i++) {
+		    outputHTML += i + "<br>";
+		}
+		valuesDiv.innerHTML = outputHTML;</div>
+	<p></p> 
+	<p>
+	Sum:
+	</p><div id="sum">let sum = 0;
+		let counter = 1;
+		while(counter<=10){
+			sum+=counter;
+			counter++;
+		}
+		document.getElementById("sum").innerText = sum;
+		let a=0;
+		let b=1;
+		let c=2;
+		let abcSum = a+b+c;
+		document.write("The sum of a, b, and c is: " + abcSum);
+	document.write("<br>");
+		if (a < b) {
+	        document.write("a < b");
+	    } else if (a > b) {
+	        document.write("a > b");
+	    } else {
+	        // Optional: handle the case where they are equal
+	        document.write("a = b");
+	    }
+</div>
+	<p></p>
 	<script>
 		/*
 		Author = Sophia Seohyun Choi
 		Class = IT-2320
 		*/
 		let name = "Sophia Seohyun Choi";
-		document.write("Lab 1. Completed by"+"Sophia Choi");
+		document.write("Lab 1. Completed by "+"Sophia Choi");
+		document.write("<br>");
 		console.log("Note: Lab 1. Completed by"+"Sophia Choi");
 		document.getElementById("output").innerText = "innerHTML value set";
 		const valuesDiv = document.getElementById("values");
@@ -24,18 +66,19 @@
 		for (let i = 1; i <= 10; i++) {
 		    outputHTML += i + "<br>";
 		}
+		valuesDiv.innerHTML = outputHTML;
 		let sum = 0;
-		let i = 1;
-		while(i<=10){
-			sum+=i;
-			i++;
+		let counter = 1;
+		while(counter<=10){
+			sum+=counter;
+			counter++;
 		}
 		document.getElementById("sum").innerText = sum;
 		let a=0;
 		let b=1;
 		let c=2;
-		let sum = a+b+c;
-		document.write("The sum of a, b, and c is: " + sum);
+		let abcSum = a+b+c;
+		document.write("The sum of a, b, and c is: " + abcSum);
         document.write("<br>");
 		if (a < b) {
 	        document.write("a < b");
@@ -50,20 +93,6 @@
 // Output the final string containing all values to the div's innerHTML
 valuesDiv.innerHTML = outputHTML;
 	</script>
-	<h1>IT-2320 - Lab 1: Language Constructs</h1>
-	<h2>Student Name: Sophia Choi</h2>
-	<p>
-	Output:
-	</p><div id="output"></div>
-	<p></p>
-	<p>
-	Values:<br>
-	</p><div id="values"></div>
-	<p></p> 
-	<p>
-	Sum:
-	</p><div id="sum"></div>
-	<p></p>
 	<!-- Place your JavaScript code here -->
 </body>
 
