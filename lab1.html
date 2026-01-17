@@ -10,8 +10,48 @@
 	</style>
 </head>
 <body>
+	<script>
+		/*
+		Author = Sophia Seohyun Choi
+		Class = IT-2320
+		*/
+		let name = "Sophia Seohyun Choi";
+		document.write("Lab 1. Completed by"+"Sophia Choi");
+		console.log("Note: Lab 1. Completed by"+"Sophia Choi");
+		document.getElementById("output").innerText = "innerHTML value set";
+		const valuesDiv = document.getElementById("values");
+		let outputHTML = "";
+		for (let i = 1; i <= 10; i++) {
+		    outputHTML += i + "<br>";
+		}
+		let sum = 0;
+		let i = 1;
+		while(i<=10){
+			sum+=i;
+			i++;
+		}
+		document.getElementById("sum").innerText = sum;
+		let a=0;
+		let b=1;
+		let c=2;
+		let sum = a+b+c;
+		document.write("The sum of a, b, and c is: " + sum);
+        document.write("<br>");
+		if (a < b) {
+	        document.write("a < b");
+	    } else if (a > b) {
+	        document.write("a > b");
+	    } else {
+	        // Optional: handle the case where they are equal
+	        document.write("a = b");
+	    }
+
+
+// Output the final string containing all values to the div's innerHTML
+valuesDiv.innerHTML = outputHTML;
+	</script>
 	<h1>IT-2320 - Lab 1: Language Constructs</h1>
-	<h2>Student Name: </h2>
+	<h2>Student Name: Sophia Choi</h2>
 	<p>
 	Output:
 	</p><div id="output"></div>
@@ -26,4 +66,5 @@
 	<p></p>
 	<!-- Place your JavaScript code here -->
 </body>
+
 
