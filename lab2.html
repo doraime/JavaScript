@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <style>
+		/* CSS Styles */
+		* { font-family: Roboto, Helvetica, Arial, sans-serif; 
+		body { padding: 10px; }
+	</style>	
+    <title>Lab 2</title>
+	<script>
+		let secondsSinceLoad=0;
+		const updateSeconds = () =>
+  			(document.getElementById("seconds").innerText = ++secondsSinceLoad);
+		// add functions here
+		function add(a,b){
+			return a+b;
+		}
+		function subtract(a,b){
+			return a-b;
+		}
+		function sum() {
+			let sum = 0;
+			for (let i = 0; i < arguments.length; i++) {
+				sum += arguments[i];
+			}
+			return sum;
+		}
+		function setTitle() {
+			document.getElementById('title').textContent = "Hello, this is Lab 2!";
+		}
+		function studentName(name){
+			document.getElementById('student').innerHTML = name;
+		}
+
+		function helloWorld() {
+			document.write("Hello World!"+"<br>");
+		}
+		// this is a function that is called when the page finishes loading
+		// put any functions that are called on page load into theis single function
+		document.addEventListener("DOMContentLoaded", function() {
+			studentName(John Doe);
+			setTitle();
+			setInterval(updateSeconds, 1000);
+			// put your function calls here
+		});
+	</script>
+</head>
+<body>
+	<h1 id="title">Title</h1>
+	<h2 id="student">Student Name</h2>
+	Seconds since page loaded: <div id="seconds"></div>
+	<script>
+		// any calls using document.write() here
+		document.writeln(add(10, 15) + "<br>");
+        document.writeln(subtract(45, 10) + "<br>");
+        document.writeln(sum(5, 10, 20, 30) + "<br>")
+		helloWorld();
+    </script>
+</body>
+</html>
