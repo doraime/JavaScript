@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            class Student {
+        constructor(name, major, gpa, classesTaken) {
+            this.name = name;
+            this.major = major;
+            this.gpa = gpa;
+            this.classesTaken = classesTaken;
+        }
+
+        displayProperties() {
+            document.writeln("<h3>Student Object</h3>");
+            document.writeln("Name: " + this.name + "<br>");
+            document.writeln("Major: " + this.major + "<br>");
+            document.writeln("GPA: " + this.gpa + "<br>");
+            document.writeln("Classes Taken: " + this.classesTaken.join(", ") + "<br><br>");
+        }
+    }
+        let student1 = new Student(
+                "Sophia Choi",
+                "Programming and Development",
+                3.0,
+                ["IT-1025", "IT-2310", "IT-1050"]
+            );
+
+            student1.displayProperties();
+            let Course = {
+        courseId: "IT-2320",
+        title: "IT-2320",
+        crsDesc: "Interactive Internet Programming",
+        creditHrs: "4",
+
+        displayCourse() {
+            document.writeln("<h3>Course Object</h3>");
+            for (let value of Object.values(this)) {
+                if (typeof value !== "function") {
+                    document.writeln(value + "<br>");
+                }
+            }
+            document.writeln("<br>");
+        }
+    };
+
+    Course.displayCourse();
+    let planet = {
+        name: "Mercury",
+        diameterMiles: 3031.9
+    };
+
+    // Add property after creation
+    planet.millMilesFromEarth = 48;
+
+    document.writeln("<h3>Planet Object</h3>");
+    document.writeln("Planet Name: " + planet.name + "<br>");
+    document.writeln("Diameter (miles): " + planet.diameterMiles + "<br>");
+    document.writeln("Million Miles From Earth: " + planet.millMilesFromEarth + "<br><br>");
+     let favoriteLanguages = new Set(["JavaScript", "Python", "Swift", "Dart"]);
+
+    console.log("Favorite Languages:");
+    for (let language of favoriteLanguages) {
+        console.log(language);
+    }
+    let creditHrs = new Map();
+        creditHrs.set("IT-1025", 3);
+        creditHrs.set("IT-1050", 3);
+        creditHrs.set("IT-2310", 3);
+        creditHrs.set("IT-2320", 4);
+        creditHrs.set("IT-2030", 4);
+        creditHrs.set("IT-2351", 4);
+        creditHrs.set("IT-2650", 4);
+
+        console.log("Credit hours for IT-2030: " + creditHrs.get("IT-2030"));
+
+        console.log("All credit hour values:");
+        for (let [course, hours] of creditHrs) {
+            console.log(course + ": " + hours);
+        }
+
+
+
+
+        </script>
+    </body>
+
+</html>
