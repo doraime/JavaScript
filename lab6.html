@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Lab 6</title>
+    <style>*{font-family:Roboto,Helvetica,Arial,sans-serif;}body{padding:10px;}</style>
+  </head>
+  <body>
+    <h1>IT-2320<br>Lab 6 - AJAX, Frameworks, promises</h1>
+    <h2>Student Name: </h2>
+    <p>
+      AJAX Response:<br>
+      <div id="ajax"></div>
+    </p>
+    <p>
+      Fetch Response:<br>
+      <div id="fetch"></div>
+    </p>
+    <script>
+      const ajaxDiv = document.getElementById("ajax");
+      const xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          ajaxDiv.innerText = this.responseText;
+        }
+      };
+
+      xhr.open("GET", "ajax.txt", true);
+      xhr.send();
+
+      const fetchDiv = document.getElementById("fetch");
+
+      fetch("fetch.txt")
+        .then(response => response.text())
+        .then(data => {
+          fetchDiv.innerText = data;
+        })
+        .catch(error => {
+          fetchDiv.innerText = "Error loading fetch.txt";
+          console.error(error);
+        });
+    </script>
+
+
+
+  </body>
+</html>
