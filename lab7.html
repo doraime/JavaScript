@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>replit</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<h1>Lab 7 - JSON</h1>
+<h2>Student Name: Sophia S Choi</h2>
+<p>
+  <b>Step 1</b>
+  <blockquote>Given the following: '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming"}'<br><br>
+  Parse it to a JSON object called courseObj using JSON.parse().<br><br>Then, use the JavaScript object called courseObj to output the title using document.writeln().<br><br>
+  <script>
+  // Solution 1
+  const courseJSON = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming"}';
+    const courseObj = JSON.parse(courseJSON);
+    document.writeln(courseObj.title);
+  </script>
+  </blockquote>
+</p>
+<p>
+  <b>Step 2</b>
+  <blockquote> Given:
+  const text = '[ "Document Object Model", "Language Constructs", "OOP", "Fetch API", "JSON" ]';<br><br>
+  First, use JSON.parse() to parse it to a JavaScript array.<br><br>Then, create a loop to output each of the values in array using document.writeln() separated by a newline <br>.<br>
+  <script>
+  // Solution 2
+    const text = '[ "Document Object Model", "Language Constructs", "OOP", "Fetch API", "JSON" ]';
+        const topicsArray = JSON.parse(text);
+        for (let i = 0; i < topicsArray.length; i++) {
+        document.writeln(topicsArray[i] + "<br>");
+        }
+  </script>
+  </blockquote>
+</p>
+<p>
+  <b>Step 3</b>
+  <blockquote>Given:
+  const myJSON = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming", "description":"JavaScript"}';<br><br>Use JSON.parse() to parse it to an object.<br><br>Use dot (.) notation to movidy the value of description to "An Introduction to JavaScript".<br><br>Use dot (.) notation to output all of the values using a single document.writeln() statement.<br><br>
+  <script>
+  // Solution 3
+    const myJSON = '{"id":"IT-2320", "credits":4, "title":"Interactive Internet Programming", "description":"JavaScript"}';
+        const courseObj2 = JSON.parse(myJSON);
+        courseObj2.description = "An Introduction to JavaScript";
+        document.writeln(courseObj2.id + ", " + courseObj2.credits + ", " + courseObj2.title + ", " + courseObj2.description);
+  </script>
+  </blockquote>
+</p>
+<p>
+  <b>Step 4</b>
+  <blockquote>Create an array (called courseArray) and JSON string (called courseJSON) with the following values: IT-1025, IT-2310, IT-2320.<br><br>Use any technique to output all of the values in both the array and JSON string.<br><br>In a comment, explain the technique used.<br><br>
+  <script>
+  // Solution 4
+    const courseArray = ["IT-1025", "IT-2310", "IT-2320"];
+        const courseJSON = JSON.stringify(courseArray);
+        document.writeln("Course Array: " + courseArray.join(", ") + "<br>");
+        document.writeln("Course JSON: " + courseJSON);
+    //Technique used: I created a JavaScript array called courseArray and then used JSON.stringify() to convert it to a JSON string called courseJSON. To output the values, I used document.writeln() to display both the array and the JSON string. For the array, I used the join() method to format the output with commas.
+
+  </script>
+  </blockquote>
+</p>
+<p>
+  <b>Step 5</b>
+  <blockquote>Using the "Array as JSON" example on https://www.w3schools.com/js/js_json_server.asp, read the values from courses.txt.<br><br>Output all of the values in the array.<br><br>
+  <script>
+  // Solution 5
+    fetch('courses.txt')
+        .then(response => response.json())
+        .then(data => {
+          data.forEach(course => {
+             document.writeln(course + "<br>");
+          });
+        })
+        .catch(error => console.error('Error fetching courses:', error));
+        
+  </script>
+  </blockquote>
+</p>
+<p>
+  <b>Step 6</b>
+  <blockquote>Using the "JSON From a Server" example on https://www.w3schools.com/js/js_json_server.asp, request JSON from the file it1025.txt.<br><br>Output the value of title using a document.writeln().<br><br>
+  <script>
+  // Solution 6
+  fetch('it1025.txt')
+        .then(response => response.json())
+        .then(data => {
+          document.writeln(data.title);
+        })
+        .catch(error => console.error('Error fetching course data:', error));
+  </script>
+  </blockquote>
+</p>
+  <br><br><br><br><br><br>
+</body>
+
+</html>
+
+Add a .txt file called it2320.txt and add the following content:
+
+{
+  "id": "IT-2320",
+  "credithrs": 4,
+  "title": "Interactive Internet Programming"
+}
